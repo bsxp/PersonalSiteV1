@@ -1,0 +1,59 @@
+.outerContainer {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+}
+
+.innerContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.primary {
+    border-left: calc(var(--geo-scalar) * 0.6) solid var(--color-primary);
+    border-top: calc(var(--geo-scalar) * 0.6) solid var(--color-primary);
+    height: calc(var(--geo-scalar) * 47.8);
+    width: 200px;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: calc(var(--geo-scalar) * 5);
+    border-radius: 4px;
+}
+
+.secondary {
+    border-left: calc(var(--geo-scalar) * 0.6) solid var(--color-secondary);
+    border-top: calc(var(--geo-scalar) * 0.6) solid var(--color-secondary);
+    height: calc(var(--geo-scalar) * 48.3);
+    width: 180px;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: calc(var(--geo-scalar) * 4);
+    border-radius: 4px;
+}
+
+.tertiary {
+    border-left: calc(var(--geo-scalar) * 0.6) solid var(--color-tertiary);
+    border-top: calc(var(--geo-scalar) * 0.6) solid var(--color-tertiary);
+    height: calc(var(--geo-scalar) * 48.8);
+    width: 160px;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: calc(var(--geo-scalar) * 3);
+    border-radius: 4px;
+}
+
+.quarternary {
+    border-left: calc(var(--geo-scalar) * 0.6) solid var(--color-quarternary);
+    border-top: calc(var(--geo-scalar) * 0.6) solid var(--color-quarternary);
+    height: calc(var(--geo-scalar) * 49.3);
+    width: 140px;
+    margin-left: auto;
+    position: absolute;
+    right: 0;
+    top: calc(var(--geo-scalar) * 2);
+    border-radius: 4px;
+}

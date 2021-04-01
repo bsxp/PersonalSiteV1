@@ -1,0 +1,27 @@
+:root {
+    /* Theming */ 
+    --color-primary: #543be2;
+    --color-secondary: #b807a9;
+    --color-tertiary: #FD3A69;
+    --color-quarternary: #f8b90a;
+
+    --dark-color-primary: rgb(60,60,60);
+    --dark-color-highlight: rgb(225,225,225);
+
+
+    /* Blue theme */
+    --theme-dark: #24305e;
+    --theme-mid-dark: #1e88e5;
+    --theme-mid: #64b5f6;
+    --theme-mid-light: #bbdefb;
+    --theme-light: #eeeeee;
+    
+    --square-size: 40px;
+    --square-gap: 10px;
+    --week-width: calc(var(--square-size) + var(--square-gap));
+
+    /* Fonts*/ 
+    --font-primary: 'Roboto', sans-serif;
+
+    --geo-scalar: 20px
+}

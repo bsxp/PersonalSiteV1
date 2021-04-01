@@ -1,0 +1,113 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flexLine {
+    flex-grow: 1;
+    height: 1px;
+    background-color: rgb(67, 32, 148);
+    margin-left: 16px;
+    max-width: 300px;
+}
+
+.navBarButton {
+    background-color: transparent;
+    color: black;
+    font-weight: 500;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 4px;
+    margin-right: 4px;
+    transition: 0.2s;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-transform: none;
+}
+
+.navBarButton:hover {
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.heroPreText {
+    font-family: var(--font-primary);
+    font-size: 40 !important
+}
+
+.heroMainText {
+    font-family: var(--font-primary) !important;
+    font-size: 56 !important;
+}
+
+.heroSubText { 
+    font-family: var(--font-primary) !important;
+    font-size: 40 !important;
+    overflow: hidden !important;
+}
+
+.problemSolver {
+    color: var(--theme-mid) !important
+}
+
+.softwareDeveloper {
+    color: var(--theme-mid-dark) !important
+}
+
+.evangelist {
+    color: #1EDCE0 !important
+}
+
+.whoSpan {
+    color: var(--color-tertiary);
+}
+
+.sectionHeader {
+    font-size: 30px !important; 
+    font-weight: 500;
+}
+
+.link {
+    color: var(--color-quarternary) !important;
+    transition: 0.2s;
+}
+
+.link:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.aboutMeContainer {
+    padding-right: 40%;
+}
+
+.primaryCard {
+    border-radius: 10px;
+    margin-right: -240px;
+    margin-top: 256px;
+}
+
+.logoImage {
+    height: 60px;
+    width: auto;
+    opacity: 0.5;
+    transition: 0.2s;
+    filter: grayscale(60%);
+}
+
+.logoImage:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+
+}
+
+.jiggle {
+    transition: 0.25s;
+    transform: translateY(0px)
+}
+
+.jiggle:hover {
+    transform: translateY(calc(var(--geo-scalar) * -1))
+}
