@@ -33,10 +33,17 @@ function generateHistoryObject() {
     let o = {}
 
     for (let i = 0; i < 28; i++) {
-        o[i] = []
+        o[i] = 0
     }
 
     return o
+
+}
+
+function calculateContributionLevel(count) {
+
+    if (count < 20) return Math.ceil(count / 5)
+    else return 4
 
 }
 
@@ -51,8 +58,12 @@ function GithubSquares(props) {
         .then(res => {
             console.log({res})
 
+
             if (res.status === 200) {
                 setEvents(res.data)
+
+
+                const o = generateHistoryObject()
 
                 const fourWeeksAgo = calculateFourWeeksAgo()
 
@@ -63,17 +74,17 @@ function GithubSquares(props) {
 
                 })
 
-                console.log({eventsLastFourWeeks})
-
                 for (let event of eventsLastFourWeeks) {
 
-                    const ts = new Date(event.created_at).getTime()
+                    const now = new Date().getTime()
+                    const eventTime = new Date(event.created_at).getTime()
+
+                    const dayIndex = Math.floor((now-eventTime)/86400000)
                     
-                    const numDaysAgo = Math.floor(ts - fourWeeksAgo)
-
-                    console.log({event})
-
+                    o[27-dayIndex] = o[27-dayIndex] + 1
                 }
+
+                set(o)
 
             } 
             
@@ -84,7 +95,7 @@ function GithubSquares(props) {
     }, [fetchContributions])
 
     return (
-        <div className={styles.graph}>
+        <div className={styles.graph} >
             <ul className={styles.months}>
                 <li></li>
                 <li/>
@@ -102,7 +113,7 @@ function GithubSquares(props) {
                 <li/>
             </ul>
             <ul className={styles.squares}>
-                {new Array(31).fill(Math.random() * 3).map(item => <li data-level={item}/>)}
+                {Object.keys(eventCountByDateLag).map(key => <li data-level={calculateContributionLevel(eventCountByDateLag[key])}/>)}
             </ul>
         </div>
     )

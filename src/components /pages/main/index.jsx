@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core'
 import TransitionText from './transitionText'
 import { grey } from '@material-ui/core/colors'
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import AboutMeSection from './AboutMeSection'
+import AboutMeSection from './AboutSection/AboutMeSection'
 import ToolbeltSection from './toolbeltSection'
 import styles from '../../styles.module.css'
 import AccentLines from '../geometry/accentLines'
@@ -21,12 +21,12 @@ const useStyles = makeStyles(theme => ({
         color: 'var(--theme-mid)'
     },
     heroMainText: {
-        fontSize: 56,
+        fontSize: 48,
         fontWeight: '700',
         fontFamily: "var('--font-primary')"
     },
     heroSubText: {
-        fontSize: 56,
+        fontSize: 48,
         fontFamily: "var(--font-primary)"
     },
     heroContainer: {
@@ -74,7 +74,7 @@ function MainPage(props) {
         <div style={{position: 'relative'}}>
             <div className={classes.heroContainer}>
                 <Grid container style={{height: '100%'}}>
-                    <Grid item xs={8} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 'calc(var(--geo-scalar) * 6)' }}>
+                    <Grid item xs={10} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 'calc(var(--geo-scalar) * 6)' }}>
                         <Typography className={classes.heroPreText}>
                             Hello world,
                         </Typography>
@@ -97,16 +97,19 @@ function MainPage(props) {
                             Reach out
                         </Button>
                     </Grid>
-                    <Grid item xs={1}>
+                    <Grid item xs={2} style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flexDirection: 'column'}}>
+                        <Typography style={{fontSize: 14, fontWeight: '500', textTransform: 'uppercase', color: 'var(--theme-mid)', width: '100%', textAlign: 'center'}}>
+                            Recent activity
+                        </Typography>
                         <GithubSquares />
                     </Grid>
                 </Grid>
             </div>
             <div>
                 <AboutMeSection/>
-            </div>
+            {/* </div>
                 <ToolbeltSection />
-            <div>
+            <div> */}
                 <ProjectsSection />
             </div>
         </div>

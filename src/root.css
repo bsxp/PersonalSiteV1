@@ -17,7 +17,7 @@
     --theme-light: #eeeeee;
     
     --square-size: 40px;
-    --square-gap: 10px;
+    --square-gap: 20px;
     --week-width: calc(var(--square-size) + var(--square-gap));
 
     /* Fonts*/ 

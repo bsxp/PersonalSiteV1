@@ -24,7 +24,7 @@ function TransitionText(props) {
     return transitions.map(
         ({ item, key, props }) =>
             item && (
-                <animated.span key={key} style={{...props, fontSize: 56, position: 'absolute'}} className={classes}>
+                <animated.span key={key} style={{...props, fontSize: 48, position: 'absolute'}} className={classes}>
                     {item}
                 </animated.span>
             )

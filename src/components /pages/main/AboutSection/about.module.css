@@ -1,0 +1,35 @@
+.image {
+    height: auto;
+    width: 100%;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: 0.2s ease;
+    filter: grayscale(80%);
+}
+
+.imageWrapper {
+    position: relative;
+    overflow: visible;
+}
+
+.imageWrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--theme-mid);
+    opacity: 0.2;
+    transition: all .3s linear;
+    border-radius: 4px;
+}
+
+.imageWrapper:hover:before {
+    background: none;
+}
+
+.image:hover {
+    filter: grayscale(0%);
+}

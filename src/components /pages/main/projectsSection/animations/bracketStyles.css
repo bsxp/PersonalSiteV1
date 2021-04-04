@@ -1,0 +1,112 @@
+#left-bracket,
+#right-bracket,
+#dots > * {
+    transition: all 10s ease;
+    
+}
+
+
+#left-bracket {
+    fill: var(--theme-mid);
+    opacity: 0.9;
+}
+
+#dots {
+    --step-duration: 10000ms;
+
+    --first-dot-delay: 0ms;
+    --second-dot-delay: 200ms;
+    --third-dot-delay: 400ms;
+
+    --first-dot-color: var(--theme-mid-light);
+    --second-dot-color: var(--theme-mid-light);
+    --third-dot-color: var(--theme-mid-light);
+}
+
+#right-bracket {
+    fill: var(--theme-mid);
+    opacity: 0.9;
+}
+
+#first-dot {
+    fill: var(--first-dot-color);
+    animation: bounce-up, drop, return-up, return-down;
+    animation-duration: var(--step-duration), var(--step-duration), var(--step-duration), var(--step-duration);
+    animation-timing-function: ease-out, ease-in-out, ease-in-out, ease-in-out;
+    animation-delay: 
+        calc(var(--first-dot-delay)),
+        calc(var(--first-dot-delay)),
+        calc(var(--first-dot-delay)),
+        calc(var(--first-dot-delay));
+    animation-iteration-count: infinite, infinite, infinite, infinite;
+    transition: 0.2s;
+}
+
+#second-dot {
+    fill: var(--second-dot-color);
+    animation: bounce-up, drop, return-up, return-down;
+    animation-duration: var(--step-duration), var(--step-duration), var(--step-duration), var(--step-duration);
+    animation-timing-function: ease-out, ease-in-out, ease-in-out, ease-in-out;
+    animation-delay:
+        calc(var(--second-dot-delay)),
+        calc(var(--second-dot-delay)),
+        calc(var(--second-dot-delay)),
+        calc(var(--second-dot-delay));
+    animation-iteration-count: infinite, infinite, infinite, infinite;
+    transition: 0.2s;
+}
+
+#third-dot {
+    fill: var(--third-dot-color);
+    animation: bounce-up, drop, return-up, return-down;
+    animation-duration: var(--step-duration), var(--step-duration), var(--step-duration), var(--step-duration);
+    animation-timing-function: ease-out, ease-in-out, ease-in-out, ease-in-out;
+    animation-delay:
+        calc(var(--third-dot-delay)),
+        calc(var(--third-dot-delay)),
+        calc(var(--third-dot-delay)),
+        calc(var(--third-dot-delay));
+    animation-iteration-count: infinite, infinite, infinite, infinite;
+    transition: 0.2s;
+}
+
+@keyframes bounce-up {
+    0% {
+        transform: translateY(0px);
+        /* fill: var(--dot-color); */
+    }
+    5% {
+        transform: translateY(-10px);
+        /* fill: var(--dot-color); */
+    }
+}
+
+@keyframes drop {
+    5% {
+        transform: translateY(-10px);
+    }
+    10% {
+        transform: translateY(3px);
+    }
+}
+
+@keyframes return-up {
+    10% {
+        transform: translateY(3px);
+
+    }
+    12.5% {
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes return-down {
+    12.5% {
+        transform: translateY(-2px);
+
+    }
+    15% {
+        transform: translateY(0px);
+    }
+}
+
