@@ -1,0 +1,16 @@
+.toolClass > div {
+    /* animation: text-scroll 4s ease-in-out infinite;
+    animation-direction: alternate-reverse; */
+}
+
+.toolClass {
+    overflow: hidden;
+}
+
+@keyframes text-scroll {
+    0% {
+    }
+    100% {
+        margin-right: 0
+    }
+}

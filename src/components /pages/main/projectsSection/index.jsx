@@ -2,41 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button, Grid, Typography, makeStyles } from '@material-ui/core'
 import FeaturedProject from './featured'
-import LexeauSS from '../../../../resources/images/lexeauHome.png'
 import StackGraphic from './animations/stackGraphic'
 import BracketGraphic from './animations/bracketGraphic'
-import OtherProjectsCard from './OtherProjectsCard'
+import OtherProjectsCard from './OtherProjectsCard/OtherProjectsCard'
 import LoadMoreButton from './LoadMoreButton'
-
-
-const projects = [
-    {
-        title: "Lexeau",
-        description: "A SaaS platform for adaptive web content",
-        image: LexeauSS,
-        git: "https://github.com/",
-        externalLink: "https://lexeau.com/",
-        tools: [
-            "React",
-            "Node.js",
-            "Python",
-            "AWS"
-        ]
-    },
-    {
-        title: "PopOver",
-        description: "An iOS platform to connect college students with gig work demand",
-        image: null,
-        git: "https://github.com/",
-        tools: [
-            "Swift",
-            "Firebase",
-            "Stripe API"
-        ]
-    }
-]
+import { featuredProjects, archiveProjects } from './projects'
 
 function ProjectsSection(props) {
+
+    const [archivesSliced, setArchivesSliced] = React.useState(true)
+
+    const switchArchiveDisplay = () => {
+        setArchivesSliced(!archivesSliced)
+    }
+
     return (
         <div style={{display: 'flex', justifyContent: 'center', width: '100%', backgroundColor: '#0e1736', paddingTop: '128px', paddingBottom: '128px'}}>
             <Grid container>
@@ -49,29 +28,29 @@ function ProjectsSection(props) {
                 </Grid>
                 <Grid item md={3}/>
 
-                <Grid item md={3}/>
-                <Grid item container xs={6}>
-                    {projects.map((project, index) => <FeaturedProject project={project} index={index}/>)}
+                <Grid item md={1}/>
+                <Grid item container xs={10}>
+                    {featuredProjects.map((project, index) => <FeaturedProject project={project} index={index}/>)}
                 </Grid>
-                <Grid item md={3}/>
+                <Grid item md={1}/>
                 <Grid item md={3}/>
                 <Grid item container md={6} xs={12}>
                     <Grid item xs={12}>
                         <div style={{display: 'flex', alignItems: 'center', marginBottom: '64px'}}>
-                        <BracketGraphic style={{marginRight: '32px'}}/>
-                        <Typography style={{color: 'var(--theme-mid-light)', fontSize: 36, fontWeight: '700'}}>
-                            Other projects
-                        </Typography>
+                            <BracketGraphic style={{marginRight: '32px'}}/>
+                            <Typography style={{color: 'var(--theme-mid-light)', fontSize: 36, fontWeight: '700'}}>
+                                Other projects
+                            </Typography>
                         </div>
                     </Grid>
                     <Grid container spacing={3}>
-                        {new Array(6).fill(0).map((_, index) => (
+                        {archiveProjects.slice(0, archivesSliced ? 3 : archiveProjects.length - 1).map((project, index) => (
                             <Grid item xs={4}>
-                                <OtherProjectsCard key={index}/>
+                                <OtherProjectsCard key={index} project={project}/>
                             </Grid>
                             ))}
                     </Grid>
-                    <LoadMoreButton />
+                    <LoadMoreButton onClick={switchArchiveDisplay} archivesSliced={archivesSliced}/>
                 </Grid>
                 <Grid item md={3}/>
             </Grid>

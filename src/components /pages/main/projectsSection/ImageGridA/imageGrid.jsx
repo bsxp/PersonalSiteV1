@@ -11,19 +11,19 @@ function ImageGridA(props) {
     return (
         <div className={styles.wrapper}>
             <div id={styles.upperLeftImage}> 
-                <img src={LexeauDash} style={{width: '100%', height: 'auto'}}/>
+                {/* <img src={LexeauDash} style={{width: '100%', height: 'auto'}}/> */}
             </div>
             <div id={styles.upperLeftHighlight}/>
             <div id={styles.upperRightImage}>
-                <img src={LexeauSearch} style={{width: '100%', height: 'auto'}}/>
+                {/* <img src={LexeauSearch} style={{width: '100%', height: 'auto'}}/> */}
             </div>
             <div id={styles.upperRightHighlight}/>
             <div id={styles.lowerRightImage}>
-                <img src={LexeauAb} style={{width: '100%', height: 'auto'}}/>
+                {/* <img src={LexeauAb} style={{width: '100%', height: 'auto'}}/> */}
             </div>
             <div id={styles.lowerRightHighlight}/>
             <div id={styles.lowerLeftImage}>
-                <img src={LexeauDocumentation} style={{width: 'auto', height: '100%'}}/>
+                {/* <img src={LexeauDocumentation} style={{width: 'auto', height: '100%'}}/> */}
             </div>
             <div id={styles.lowerLeftHighlight}/>
         </div>

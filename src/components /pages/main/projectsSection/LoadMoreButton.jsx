@@ -18,13 +18,13 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-function LoadMoreButton(props) {
+function LoadMoreButton({style, archivesSliced, ...props}) {
 
     const classes = useStyles()
     
     return (
-        <Button className={classes.root}>
-            Load more
+        <Button className={classes.root} {...props}>
+            {archivesSliced ? "Show more" : "Show less"}
         </Button>
     )
 }

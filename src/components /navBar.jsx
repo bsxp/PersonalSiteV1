@@ -21,7 +21,7 @@ export default function NavBar() {
     
     return (
         <AppBar
-            position="sticky"
+            position="relative"
             style={{
                 backgroundColor: 'transparent',
                 height: 'calc(var(--geo-scalar) * 3)'

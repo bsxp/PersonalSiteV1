@@ -25,11 +25,12 @@
     border: 1px solid transparent;
     border-radius: 5px;
     text-transform: none;
+    cursor: pointer;
 }
 
 .navBarButton:hover {
-    border: 1px solid var(--accent-primary);
-    color: var(--accent-primary);
+    border: 1px solid var(--theme-mid-dark);
+    color: var(--theme-mid-dark);
 }
 
 .heroPreText {

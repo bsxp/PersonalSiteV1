@@ -13,23 +13,47 @@ function FeaturedProject(props) {
 
     return (
         <Grid container spacing={4} item xs={12} style={{marginTop: '64px'}}>
-            <Grid item xs={2}>
-                <Typography style={{textTransform: 'uppercase', color: 'var(--theme-mid)', textAlign: 'right', fontSize: 14, fontWeight: '700'}}>
-                    {title}
-                </Typography>
-            </Grid>
-            <Grid item xs={6}>
-                <Typography style={{color: 'var(--theme-light)'}}>
-                    {description}
-                </Typography>
-                <Typography>
-                    {tools.map(tool => <span style={{color: 'var(--theme-mid-light)', marginRight: '16px'}}>{tool}</span>)}
-                </Typography>
-            </Grid>
-            <Grid item xs={4}>
-                {index === 0 && <ImageGridA images={images} />}
-                {index === 1 && <ImageGridB images={images} />}
-            </Grid>
+            {index === 0 && (
+                <React.Fragment>
+                    <Grid item xs={2}>
+                        <Typography style={{textTransform: 'uppercase', color: 'var(--theme-mid)', textAlign: 'right', fontSize: 14, fontWeight: '700'}}>
+                            {title}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography style={{color: 'var(--theme-light)'}}>
+                            {description}
+                        </Typography>
+                        <Typography>
+                            {tools.map(tool => <span style={{color: 'var(--theme-mid-light)', marginRight: '16px'}}>{tool}</span>)}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={4} style={{backgroundColor: 'blue'}}>
+                        {index === 0 && <ImageGridA images={images} />}
+                    </Grid>
+                </React.Fragment>
+            )}
+            {index === 1 && (
+                <React.Fragment>
+                    <Grid item xs={4}>
+                        {index === 1 && <ImageGridB images={images} />}
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Typography style={{textTransform: 'uppercase', color: 'var(--theme-mid)', textAlign: 'right', fontSize: 14, fontWeight: '700'}}>
+                            {title}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Typography style={{color: 'var(--theme-light)'}}>
+                            {description}
+                        </Typography>
+                        <Typography>
+                            {tools.map(tool => <span style={{color: 'var(--theme-mid-light)', marginRight: '16px'}}>{tool}</span>)}
+                        </Typography>
+                    </Grid>
+                    
+                </React.Fragment>
+            )}
         </Grid>
     )
 }
